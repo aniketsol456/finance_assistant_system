@@ -1,84 +1,77 @@
-/* Main Page Container */
 .mainPage {
     margin-top: 60px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  /* Financial Summary Section */
-  .financialSummary {
+}
+
+.financialSummary {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  }
-  
-  .summaryItem {
+    flex-wrap: wrap;
+}
+
+.summaryItem {
     padding: 10px;
     background-color: #f4f4f4;
     border-radius: 8px;
     text-align: center;
     width: 30%;
     box-sizing: border-box;
-  }
-  
-  /* Charts Section */
-  .chartsSection {
+}
+
+.chartsSection {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  }
-  
-  .chartContainer {
+    flex-wrap: wrap;
+}
+
+.chartContainer {
     width: 45%;
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 8px;
     box-sizing: border-box;
-  }
-  
-  /* Income Info Section */
-  .incomeInfo {
+}
+
+.incomeInfo {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  }
-  
-  .infoItem {
+    flex-wrap: wrap;
+}
+
+.infoItem {
     padding: 10px;
     background-color: #f4f4f4;
     border-radius: 8px;
     text-align: center;
     width: 30%;
     box-sizing: border-box;
-  }
-  
-  /* Responsive Design for Smaller Screens */
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .financialSummary, .chartsSection, .incomeInfo {
-      flex-direction: column; /* Stack items vertically on smaller screens */
-      align-items: center; /* Center items */
+        flex-direction: column;
+        align-items: center;
     }
-  
+
     .summaryItem, .chartContainer, .infoItem {
-      width: 100%; /* Full width on smaller screens */
-      margin-bottom: 15px; /* Add spacing between items */
+        width: 100%;
+        margin-bottom: 15px;
     }
-  }
-  
-  /* Very Small Screens (Mobile) */
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .summaryItem, .chartContainer, .infoItem {
-      width: 100%;
-      padding: 15px; /* Reduced padding for smaller screens */
+        width: 100%;
+        padding: 15px;
     }
-  
+
     .chartsSection {
-      flex-direction: column; /* Stack charts vertically */
+        flex-direction: column;
     }
-  }
-  
+}

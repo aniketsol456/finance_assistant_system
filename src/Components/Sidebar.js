@@ -6,7 +6,6 @@ import {
   FaWallet,
   FaCalculator,
   FaClipboardList,
-  FaSignOutAlt,
 } from "react-icons/fa";
 import "./Sidebar.css";
 import Logo from "../assets/images/logo2.jpg";
@@ -22,7 +21,6 @@ const Sidebar = ({ isOpen }) => {
 
   return (
     <div className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
-      {/* Sidebar Header */}
       <div className="sidebarHeader">
         <div className="logoWrapper">
           <img src={Logo} alt="Logo" className="logoImage" />
@@ -30,8 +28,6 @@ const Sidebar = ({ isOpen }) => {
           <span className="logoText">Finance Manager</span>
         </div>
       </div>
-
-      {/* Menu Items */}
       <ul className="menu">
         {menuItems.map((item, index) => (
           <li key={index} className="menuItem">

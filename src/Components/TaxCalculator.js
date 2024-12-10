@@ -5,7 +5,7 @@ const TaxCalculator = () => {
   const [filingStatus, setFilingStatus] = useState("single");
   const [useStandardDeduction, setUseStandardDeduction] = useState(false);
   const [deduction, setDeduction] = useState(0);
-  const [income, setIncome] = useState(100); // Default income is $100
+  const [income, setIncome] = useState(100);
   const [taxableIncome, setTaxableIncome] = useState(100);
   const [stateTax, setStateTax] = useState(0);
   const [federalTax, setFederalTax] = useState(0);
@@ -13,40 +13,32 @@ const TaxCalculator = () => {
   const [totalTax, setTotalTax] = useState(0);
 
   const handleCalculate = () => {
-    // Use let instead of const to allow reassignment
     let adjustedIncome = income;
-  
+
     if (useStandardDeduction) {
-      // Standard deduction for 2024 based on filing status
       const standardDeduction =
-        filingStatus === "single" ? 13850 : 27700; // Example standard deduction values
+        filingStatus === "single" ? 13850 : 27700;
       adjustedIncome -= standardDeduction;
     } else {
       adjustedIncome -= deduction;
     }
-  
-    // Federal tax rates (for example, simple calculation based on income ranges)
-    const federalTaxRate = 0.12; // Example rate for simplicity
-    let federalTax = adjustedIncome * federalTaxRate;  // Use let instead of const
-  
-    // Virginia state tax (example flat rate)
-    const stateTaxRate = 0.05; // Example state tax rate
-    let stateTax = adjustedIncome * stateTaxRate;  // Use let instead of const
-  
-    // FICA tax calculation (fixed percentage)
-    let ficaTax = adjustedIncome * 0.0765;  // Use let instead of const
-  
-    // Total tax to be paid
-    let totalTaxAmount = federalTax + stateTax + ficaTax;  // Use let instead of const
-  
-    // Set the calculated tax values
+
+    const federalTaxRate = 0.12;
+    let federalTax = adjustedIncome * federalTaxRate;
+
+    const stateTaxRate = 0.05;
+    let stateTax = adjustedIncome * stateTaxRate;
+
+    let ficaTax = adjustedIncome * 0.0765;
+
+    let totalTaxAmount = federalTax + stateTax + ficaTax;
+
     setStateTax(stateTax);
     setFederalTax(federalTax);
     setFicaTax(ficaTax);
     setTotalTax(totalTaxAmount);
     setTaxableIncome(adjustedIncome);
   };
-  
 
   return (
     <div className="taxCalculator">

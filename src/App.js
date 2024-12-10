@@ -5,7 +5,7 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import HomePage from './Components/Home';
 import Sidebar from './Components/Sidebar';
-import Header from './Components/Header'; // Add Header for specific pages
+import Header from './Components/Header';
 import TaxCalculator from './Components/TaxCalculator';
 import BudgetPlanner from './Components/BudgetPlanner';
 import IncomeTracker from './Components/IncomeTracker';
@@ -23,19 +23,16 @@ const App = () => {
     <Router>
       <div className="App">
         <Routes>
-          {/* Login and Registration Pages (No Sidebar, No Header) */}
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<HomePage />} />        
-
-          {/* Main Application Layout with Header and Sidebar */}
+          <Route path="/home" element={<HomePage />} />
           <Route
             path="*"
             element={
               <div className="appContainer">
-                <Sidebar isOpen={isSidebarOpen} /> {/* Sidebar */}
+                <Sidebar isOpen={isSidebarOpen} />
                 <div className="mainContent">
-                  <Header toggleSidebar={toggleSidebar} /> {/* Header */}
+                  <Header toggleSidebar={toggleSidebar} />
                   <Routes>
                     <Route path="/main-page" element={<MainPage />} />
                     <Route path="/expensetracker" element={<ExpenseTracker />} />

@@ -1,27 +1,25 @@
 import React from "react";
-import { Bar } from "react-chartjs-2"; // For the chart
+import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import "./MainPage.css";
 
 const MainPage = () => {
-  // Financial Data for charts
   const financialHistoryData = {
-    labels: ["January", "February", "March", "April", "May"], // Add more months if needed
+    labels: ["January", "February", "March", "April", "May"],
     datasets: [
       {
         label: "Expenses",
-        data: [-50, -100, -80, -120, -60], // Example expense data
+        data: [-50, -100, -80, -120, -60],
         backgroundColor: "rgba(255, 99, 132, 0.6)",
       },
       {
         label: "Income",
-        data: [100, 150, 120, 90, 130], // Example income data
+        data: [100, 150, 120, 90, 130],
         backgroundColor: "rgba(75, 192, 192, 0.6)",
       },
     ],
   };
 
-  // Total Income, Expenses, and Savings Data
   const totalIncomeBeforeTax = 100;
   const totalIncomeAfterTax = -53;
   const totalExpense = -50;
@@ -32,7 +30,6 @@ const MainPage = () => {
 
   return (
     <div className="mainPage">
-      {/* Financial Summary Section */}
       <div className="financialSummary">
         <div className="summaryItem">
           <h3>Money in Cash</h3>
@@ -48,7 +45,6 @@ const MainPage = () => {
         </div>
       </div>
 
-      {/* Charts Section */}
       <div className="chartsSection">
         <div className="chartContainer">
           <h3>Financial History</h3>
@@ -63,7 +59,7 @@ const MainPage = () => {
               datasets: [
                 {
                   label: "Total Expense",
-                  data: [totalExpense, totalExpense, totalExpense, totalExpense, totalExpense], // Add appropriate expense data here
+                  data: [totalExpense, totalExpense, totalExpense, totalExpense, totalExpense],
                   backgroundColor: "rgba(255, 99, 132, 0.6)",
                 },
               ],
@@ -72,7 +68,6 @@ const MainPage = () => {
         </div>
       </div>
 
-      {/* Income and Tax Info */}
       <div className="incomeInfo">
         <div className="infoItem">
           <h3>Total Income Before Tax</h3>

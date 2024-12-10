@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import './IncomeTracker.css';
 
 const IncomeTracker = () => {
-  // State to hold the income data
   const [incomeData, setIncomeData] = useState([]);
   const [amount, setAmount] = useState('');
   const [incomeType, setIncomeType] = useState('');
   const [incomeDate, setIncomeDate] = useState('');
   const [taxStatus, setTaxStatus] = useState('');
   
-  // Handle form submission to add income
   const handleAddIncome = () => {
     if (amount && incomeType && incomeDate && taxStatus) {
       const newIncome = {
@@ -19,7 +17,6 @@ const IncomeTracker = () => {
         taxStatus: taxStatus,
       };
       setIncomeData([...incomeData, newIncome]);
-      // Reset the form
       setAmount('');
       setIncomeType('');
       setIncomeDate('');
@@ -29,17 +26,14 @@ const IncomeTracker = () => {
     }
   };
 
-  // Handle deleting all income records
   const handleDeleteAll = () => {
     setIncomeData([]);
   };
 
-  // Calculate total income
   const totalIncome = incomeData.reduce((total, income) => total + income.amount, 0);
 
   return (
     <div className="incomeTracker">
-      {/* Income Input Section */}
       <div className="incomeInputSection">
         <input
           type="number"
@@ -75,7 +69,6 @@ const IncomeTracker = () => {
         <button onClick={handleAddIncome} className="addIncomeButton">Add Income</button>
       </div>
 
-      {/* Income Display Section */}
       <div className="incomeDisplaySection">
         <h3>Your Total Income: INR {totalIncome.toFixed(2)}</h3>
         {incomeData.length > 0 && (

@@ -1,0 +1,169 @@
+.expense-tracker {
+    margin-top: 60px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 10px;
+  }
+  
+  .form-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .form-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    flex: 1;
+  }
+  
+  .form-group button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .form-group button:hover {
+    background-color: #218838;
+  }
+  
+  .expenses-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expenses-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .date-filter {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .date-filter input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .total {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .amount {
+    color: red;
+  }
+  
+  table button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  table button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-section,
+    .expenses-section {
+      padding: 15px;
+    }
+  
+    .form-group {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .form-group input,
+    .form-group select {
+      flex: unset;
+      width: 100%;
+    }
+  
+    .form-group button {
+      width: 100%;
+    }
+  
+    .date-filter {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    table th,
+    table td {
+      padding: 8px;
+      font-size: 12px;
+    }
+  
+    .total {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-section h3,
+    .expenses-section h3 {
+      font-size: 1.2rem;
+    }
+  
+    .total {
+      font-size: 0.8rem;
+    }
+  
+    table th,
+    table td {
+      font-size: 10px;
+    }
+  }
+  

@@ -33,15 +33,15 @@ const MainPage = () => {
       <div className="financialSummary">
         <div className="summaryItem">
           <h3>Money in Cash</h3>
-          <p>{moneyInCash} $</p>
+          <p>{moneyInCash} INR</p>
         </div>
         <div className="summaryItem">
           <h3>Money on Card</h3>
-          <p>{moneyOnCard} $</p>
+          <p>{moneyOnCard} INR</p>
         </div>
         <div className="summaryItem">
           <h3>Your Total Savings</h3>
-          <p>{totalSavings} $</p>
+          <p>{totalSavings} INR</p>
         </div>
       </div>
 
@@ -71,15 +71,15 @@ const MainPage = () => {
       <div className="incomeInfo">
         <div className="infoItem">
           <h3>Total Income Before Tax</h3>
-          <p>{totalIncomeBeforeTax} $</p>
+          <p>{totalIncomeBeforeTax} INR</p>
         </div>
         <div className="infoItem">
           <h3>You Need to Pay</h3>
-          <p>{amountToPay} $</p>
+          <p>{amountToPay} INR</p>
         </div>
         <div className="infoItem">
           <h3>Total Income After Tax</h3>
-          <p>{totalIncomeAfterTax} $</p>
+          <p>{totalIncomeAfterTax} INR</p>
         </div>
       </div>
     </div>

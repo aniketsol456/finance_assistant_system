@@ -1,0 +1,131 @@
+/* Main container */
+.incomeTracker {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+/* Income Input Section */
+.incomeInputSection {
+    display: flex;
+    gap: 30px; /* Increased gap for more space between input fields */
+    align-items: center;
+    margin-bottom: 30px; /* Increased margin for more spacing between sections */
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+/* Input fields */
+.inputField {
+    padding: 12px; /* Larger padding for bigger input fields */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 200px; /* Increased max-width for larger input fields */
+}
+
+/* Add Income Button */
+.addIncomeButton {
+    padding: 12px 24px; /* Larger padding for a bigger button */
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Full width on small screens */
+    max-width: 200px; /* Increased max-width for button */
+    margin-top: 10px; /* Space between input fields and button */
+}
+
+/* Button hover effect */
+.addIncomeButton:hover {
+    background-color: #45a049;
+}
+
+/* Income Display Section */
+.incomeDisplaySection {
+    margin-top: 20px;
+}
+
+/* Table Styles */
+.incomeTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.incomeTable th,
+.incomeTable td {
+    padding: 12px; /* Larger padding for table cells */
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Delete All Button */
+.deleteAllButton {
+    padding: 12px 24px; /* Larger padding for a bigger button */
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%; /* Full width on small screens */
+    max-width: 200px; /* Increased max-width for delete button */
+}
+
+/* Button hover effect */
+.deleteAllButton:hover {
+    background-color: #e53935;
+}
+
+/* Responsive Design */
+
+/* For small screens (phones) */
+@media (max-width: 600px) {
+    .incomeInputSection {
+        flex-direction: column; /* Stack input fields vertically */
+        align-items: flex-start; /* Align inputs to the start */
+    }
+
+    .inputField,
+    .addIncomeButton,
+    .deleteAllButton {
+        width: 100%; /* Full width for smaller screens */
+        margin-top: 15px; /* Add more space between elements */
+    }
+
+    .incomeTable th,
+    .incomeTable td {
+        padding: 10px; /* Adjust padding for better readability */
+    }
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 900px) {
+    .incomeInputSection {
+        flex-direction: column;
+        gap: 20px; /* Increased gap for better spacing on tablets */
+    }
+
+    .inputField,
+    .addIncomeButton,
+    .deleteAllButton {
+        width: 100%; /* Full width for tablets */
+        margin-top: 15px;
+    }
+}
+
+/* For larger screens (desktops) */
+@media (min-width: 901px) {
+    .incomeInputSection {
+        flex-wrap: nowrap;
+        gap: 30px; /* Increased gap for larger screens */
+    }
+
+    .inputField {
+        width: 200px; /* Larger input field size */
+    }
+
+    .addIncomeButton {
+        width: auto;
+    }
+}

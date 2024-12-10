@@ -1,0 +1,206 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* App Container */
+.appContainer {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: flex;
+    flex-shrink: 0;
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    transition: width 0.3s ease;
+    flex-direction: column;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+/* Sidebar Items */
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar a:hover {
+    background-color: #8dbcea;
+}
+
+/* Main Content */
+.mainContent {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+}
+
+.mainContent.sidebarOpen {
+    margin-left: 250px;
+}
+
+.mainContent.sidebarCollapsed {
+    margin-left: 70px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background-color: #1e4d8a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1001;
+    width: calc(100% - 250px); /* Adjust to occupy remaining space next to sidebar */
+    transition: width 0.3s ease;
+}
+
+/* Toggle Button */
+.header .toggleButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Logo and Greeting */
+.header .greeting-header h1 {
+    font-size: 1.2rem;
+    color: black;
+
+}
+
+.header .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Logout Button in Header */
+.logoutButton {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+/* Show logout button */
+.logoutButton.show {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Sidebar hidden by default on small screens */
+    .sidebar {
+        position: fixed;
+        height: 100%;
+        width: 0;
+        transform: translateX(-100%);
+        z-index: 1000;
+        transition: transform 0.3s ease;
+    }
+
+    /* Sidebar open on toggle button click */
+    .sidebar.open {
+        width: 200px;
+        transform: translateX(0);
+    }
+
+    .mainContent {
+        margin-left: 0;
+        padding-top: 70px; /* Adjust for fixed header */
+    }
+
+    /* Header */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; /* Take up full width on small screens */
+        height: 60px;
+        z-index: 1001; /* Ensure header stays above content */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .header .toggleButton {
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .header .logo {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .logoutButton {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .mainContent {
+        margin-left: 0;
+    }
+}
+
+/* Larger screens (default: sidebar shown) */
+@media (min-width: 769px) {
+    .sidebar {
+        width: 235px;
+        transform: translateX(0);
+    }
+
+    .mainContent {
+        margin-left: 20px;
+    }
+
+    .header {
+        width: calc(100% - 200px);
+    }
+
+    .sidebar.open {
+        width: 250px;
+        transform: translateX(0);
+    }
+
+    .header {
+        position: fixed;
+        top: 10px;
+        left: 290px;
+        width: calc(100% - 350px); /* Adjust to remaining space */
+        height: 60px;
+        z-index: 1001;
+    }
+}
